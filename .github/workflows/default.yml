@@ -1,0 +1,21 @@
+name: CI
+
+env:
+  node-version: '12.18.3'
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.node-version }}
+    - run: npm install
+    - run: npm run lint
+    - run: npm run test
