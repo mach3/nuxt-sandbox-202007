@@ -13,3 +13,13 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+const num: number = 'test'
+
+console.log({ num })
+
+export default Vue.extend({})
+</script>
